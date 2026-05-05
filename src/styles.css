@@ -1,84 +1,82 @@
 :root {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: #0f172a;
-  background: #f8fafc;
+  background: #f5f7fb;
 }
-
 * { box-sizing: border-box; }
 body { margin: 0; }
 
-.app-shell {
-  display: flex;
-  min-height: 100vh;
-}
+.app-shell { display: flex; min-height: 100vh; }
 
 .sidebar {
   width: 250px;
-  background: #0f172a;
-  color: #e2e8f0;
-  padding: 1.5rem 1rem;
+  background: #111827;
+  color: #e5e7eb;
+  padding: 1.25rem 0.9rem;
+  border-right: 1px solid #1f2937;
 }
+.brand h1 { margin: 0; font-size: 1.35rem; }
+.brand p { margin: 0.1rem 0 1rem; color: #9ca3af; }
 
-.brand h1 { margin: 0; font-size: 1.4rem; }
-.brand p { margin: 0.25rem 0 1.5rem; color: #94a3b8; }
-
-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
+nav { display: flex; flex-direction: column; gap: 0.4rem; }
 .nav-item {
-  border: 0;
-  text-align: left;
-  padding: 0.75rem 0.9rem;
-  border-radius: 0.55rem;
-  font-size: 0.95rem;
-  color: #cbd5e1;
-  background: transparent;
-  cursor: pointer;
+  border: 0; text-align: left; padding: 0.7rem 0.8rem; border-radius: 0.5rem;
+  color: #d1d5db; background: transparent; cursor: pointer; font-size: 0.95rem;
 }
+.nav-item:hover, .nav-item.active { background: #1f2937; color: #fff; }
 
-.nav-item:hover,
-.nav-item.active {
-  background: #1e293b;
-  color: #f8fafc;
-}
-
-.content {
-  flex: 1;
-  padding: 2rem;
-}
-
+.content { flex: 1; padding: 1.5rem 1.8rem; }
+.content-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .content-header h2 { margin: 0; }
-.content-header p { margin-top: 0.3rem; color: #64748b; }
+.content-header p { margin: 0.2rem 0 0; color: #6b7280; }
 
-.metrics-grid {
-  margin-top: 1.5rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.search {
+  width: min(480px, 100%);
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.8rem;
 }
 
-.metric-card {
-  background: white;
-  border-radius: 0.9rem;
-  padding: 1rem;
-  border-left: 6px solid #3b82f6;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-}
-.metric-card span { color: #64748b; display: block; margin-bottom: 0.6rem; }
-.metric-card strong { font-size: 1.8rem; }
+.grid { display: grid; gap: 0.8rem; }
+.cols-4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.cols-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 
-.metric-card.amber { border-left-color: #f59e0b; }
-.metric-card.violet { border-left-color: #8b5cf6; }
-.metric-card.green { border-left-color: #22c55e; }
-.metric-card.rose { border-left-color: #f43f5e; }
-
-.placeholder {
-  margin-top: 1.5rem;
-  padding: 1.2rem;
+.stat-card, .card, .table-wrap {
   background: #fff;
   border-radius: 0.75rem;
-  color: #334155;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
+.stat-card { padding: 1rem; }
+.stat-card span { color: #6b7280; display: block; }
+.stat-card strong { font-size: 1.55rem; }
+
+.table-wrap { overflow: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.7rem 0.8rem; border-bottom: 1px solid #e5e7eb; text-align: left; }
+th { background: #f8fafc; font-size: 0.86rem; color: #374151; }
+
+.stack { display: grid; gap: 0.8rem; }
+.card { padding: 1rem; }
+.card-header { display: flex; justify-content: space-between; gap: 1rem; }
+.card-header h3 { margin: 0; }
+.card-header p { margin: 0.2rem 0; color: #4b5563; }
+.status { background: #e5e7eb; padding: 0.25rem 0.55rem; border-radius: 999px; height: fit-content; font-size: 0.84rem; }
+
+.check-item { display: flex; gap: 0.5rem; margin: 0.4rem 0; }
+.upload-row { margin-top: 0.9rem; }
+.upload-btn {
+  display: inline-block;
+  background: #1f2937;
+  color: #fff;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+}
+.upload-btn input { display: none; }
+.photo-strip { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.photo-strip img { width: 110px; height: 80px; object-fit: cover; border-radius: 0.4rem; border: 1px solid #d1d5db; }
+
+.field { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; }
+.field input { border: 1px solid #d1d5db; border-radius: 0.45rem; padding: 0.55rem; }
+.rate { margin-top: 1rem; font-size: 1.05rem; }
